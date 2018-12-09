@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,800,700');
+// @import "varialbles"
+*{
+    font-family: Raleway;
+    
+}
+/*header*/
+.navbar{
+    height:10vh;
+}
+
+.navbar *{
+    margin:1em;
+}
+
+.brand-name{
+    font-weight:500;
+    font-size:150%;
+    
+}
+.book{
+    font-weight:800;
+    color:#ff4d4d;
+    
+}
+
+.search-button{
+    border-color: #ff4d4d;
+    color:#ff4d4d;
+}
+
+.search-button:hover{
+    background-color:#ff4d4d;
+    color:white;
+}
+
+/*header*/
+
