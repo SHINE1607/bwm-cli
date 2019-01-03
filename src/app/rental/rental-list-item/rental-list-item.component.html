@@ -1,0 +1,17 @@
+
+<!-- giving the link to the each rentals  -->
+<!-- MAKING A SINGLE PAGE APPLICATION BY USING THE ROUTER LINK -->
+<a class ="rental-main-option" routerLink = "/rentals/{{currentRental.id}}">
+  
+  <div class="thumbnail">
+      
+        <img src="img/hotel_1.jpg" alt="The Oberoi Mumbai" style="width:100%">
+          <div class="caption">
+              <h3 class = "hotel-title" style = "font-weight : 700">{{currentRental.title}}</h3>
+              <h4>{{currentRental.city}}, <h5>{{currentRental.location}}</h5></h4>
+              <h4 style = "color: #ff4d4d"><span style = "color: black;">Rating:</span> {{currentRental.rating}}</h4>
+            <p>Centrally located in Mumbai's business district, close to South Mumbai's shopping and entertainment areas, The Oberoi offers luxury and convenience with its outdoor heated pool, 24-hour spa, fitness... </p>
+          </div>
+        
+  </div>
+</a>

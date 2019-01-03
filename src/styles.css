@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: Raleway;
+}
+
+
+
+.page-title{
+    font-weight:700;
+    margin:0.9em;
+    margin-left: 0;
+}
+.caption{
+    font-size:70%;
+    color:#242424;
+}

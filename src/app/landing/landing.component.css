@@ -1,0 +1,80 @@
+
+*{
+    color:white;
+    box-sizing :border-box;
+}
+
+.bgImage{
+    background: url(../img/rocks-2880x1800-ocean-cliff-aerial-view-hd-5k-16853.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    height : 90vh;
+    position : relative;
+    display : grid;
+    text-align :center;
+    
+}
+
+.title { 
+    font-weight : 600;
+}
+
+.carousel-content{
+    position: absolute;
+    float: left;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 130%;
+    -webkit-animation-name: content-animation; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: content-animation;
+    animation-duration: 1s;
+}
+@-webkit-keyframes content-animation {
+    from {position: absolute;
+        float: left;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);}
+    to {position: absolute;
+        float: left;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);}
+  }
+  
+  @keyframes content-animation {
+    from {position: absolute;
+        float: left;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);}
+    to {position: absolute;
+        float: left;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);}
+  }
+  /* Standard syntax */
+
+
+.explore-button{
+    position :absolute;
+    float: left;
+    left :50%;
+    transform : translateX(-50%);
+    background-color: transparent;
+    font-size: 80%;
+    padding : 1em 4em 1em 4em;
+    border-radius : 0.3em;
+    border-width : 0.1em;
+    border-color: white;
+    transition-duration : 0.3s;
+}
+
+
+.explore-button:hover {
+    color: rgba(0, 0, 0, 0.795);
+    background-color:white;
+}
