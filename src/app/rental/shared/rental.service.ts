@@ -27,52 +27,73 @@ export class RentalService{
         shared : false,
         createdAt : "16/07/1997",
         rating : 4.7
-  },
+        },
 
-  {
-    id : "2",
-    title : "The Taj Hotel Mumbai",
-    city : "Mumbai",
-    location  : "5km from center",
-    category : "Premium",
-    image : "http:/via.placeholder.com",
-    bedrooms : 2,
-    description : "Premium hotel suites",
-    dailyRate : 10000,
-    shared : false,
-    createdAt : "16/07/2000",
-    rating : 4.8
-},
+      {
+        id : "2",
+        title : "The Taj Hotel Mumbai",
+        city : "Mumbai",
+        location  : "5km from center",
+        category : "Premium",
+        image : "http:/via.placeholder.com",
+        bedrooms : 2,
+        description : "Premium hotel suites",
+        dailyRate : 10000,
+        shared : false,
+        createdAt : "16/07/2000",
+        rating : 4.8
+    },
 
-{
-  id : "3",
-  title : "The Four Seasons Hotel Mumbai",
-  city : "Mumbai",
-  location : "2.8 km from center",
-  category : "Premium",
-  image : "http:/via.placeholder.com/",
-  bedrooms : 3,
-  description : "Premium hotel suites",
-  dailyRate : 7500,
-  shared : false,
-  createdAt : "16/07/1998",
-  rating : 4.5
-},
+      {
+        id : "3",
+        title : "The Four Seasons Hotel Mumbai",
+        city : "Mumbai",
+        location : "2.8 km from center",
+        category : "Premium",
+        image : "http:/via.placeholder.com/",
+        bedrooms : 3,
+        description : "Premium hotel suites",
+        dailyRate : 7500,
+        shared : false,
+        createdAt : "16/07/1998",
+        rating : 4.5
+      },
 
-{
-  id : "3",
-  title : "Trident Nariman Point",
-  city : "Mumbai",
-  location : "Panama",
-  category : "Premium",
-  image : "http:/via.placeholder.com/",
-  bedrooms : 3,
-  description : "Premium hotel suites",
-  dailyRate : 5000,
-  shared : false,
-  createdAt : "16/07/2007",
-  rating : 4.3
-}];
+      {
+        id : "3",
+        title : "Trident Nariman Point",
+        city : "Mumbai",
+        location : "Panama",
+        category : "Premium",
+        image : "http:/via.placeholder.com/",
+        bedrooms : 3,
+        description : "Premium hotel suites",
+        dailyRate : 5000,
+        shared : false,
+        createdAt : "16/07/2007",
+        rating : 4.3
+      }];
+
+public getRentalById(rentalId : string) : Observable<Rental>{
+  
+  return new Observable<Rental>((observer) =>{
+      setTimeout(() =>{
+        //passin the each eleement to check mathch the rental id 
+        
+        const foundRental = this.rentals.find((rental) => {
+            return rental.id == rentalId
+        });
+        //here we are emitting the data from the service 
+        //this is the argument that is apssed on to the subscribe function
+        observer.next(foundRental);
+
+        
+        
+      },200);
+
+      
+  });
+}
 //public and private  are access modifiers
 
 //creating a pblic rental method to call from compoennts and  return the rentals data to the compoent
@@ -82,9 +103,11 @@ public getRentals() : Observable<Rental[]>{
       //subscribe method automiatically invokes the observable with observer as the parameter 
       //this is were we recieve the data
       //specifying the rentalObservable to be an observable of type Rental array
-      const rentalObservable : Observable<Rental[]>= new Observable(observer =>{
+      //directlly returning an observable
+      return new  Observable<Rental[]>(observer =>{
 
         setTimeout(() =>{
+          console.log(`this is from the get rentals : ${this.rentals}`);
           observer.next(this.rentals)
         },1000);
 
@@ -98,7 +121,6 @@ public getRentals() : Observable<Rental[]>{
         },3000);
 
     });
-    console.log(rentalObservable);
-    return rentalObservable;
+    
 }
 }

@@ -1,0 +1,18 @@
+a:hover{
+    text-decoration:none;
+    
+}
+
+.thumbnail{
+    transition-duration : 0.3s;
+    border-radius : 0.4em;
+    padding : 1em;
+   
+    
+}
+
+.thumbnail:hover{
+    transform :scale(1.05,1.05);
+    box-shadow : 10px 10px 44px -12px rgba(0,0,0,0.4);
+    background-color :rgb(255, 166, 166);
+}

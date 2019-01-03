@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 //here we are importing the component to the app module or the main module
 import { HeaderComponent} from './common/header/header.component';
 import { RentalComponent } from './rental/rental.component';
-import { TempComponent } from './temp/temp.component';
+import { LandingComponent } from './landing/landing.component' 
 //importing the rental module from the rental component
 import { RentalModule } from './rental/rental.module';
 
@@ -18,8 +18,10 @@ import { RentalModule } from './rental/rental.module';
 //When the browser's URL changes, that router looks for a corresponding Route from which it can determine the component to display.
 //each routing is an object
 const routes: Routes = [
-  { path : "", redirectTo : "/rentals",  pathMatch : "full" },
-  {path : 'temp', component : TempComponent}
+ { path : "", component : LandingComponent}
+  // { path : "", redirectTo : "/rentals",  pathMatch : "full" }
+
+  
 ]
 
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     //here we are refencing the header component to use it in the app component 
     HeaderComponent, 
-    TempComponent
+    LandingComponent
+
   ],
   imports: [
     //RouterModule.forRoot fucnction will be automatically called when there is a change in the url with routes array 

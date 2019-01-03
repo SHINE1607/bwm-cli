@@ -1,11 +1,16 @@
 <!-- permentant -->
-<bwm-header></bwm-header>
-
-
-<div class="container container-list">
-    <!--<router-outlet> will display the component returned by thr routerMoudule.forroot function-->
-    <router-outlet></router-outlet>
+<!-- <div *ngIf = "landing;else elseBlock">
+    <bwm-header></bwm-header>
+    <bwm-landing></bwm-landing>
 </div>
 
-  
+<ng-template #elseBlock>
+    <bwm-header></bwm-header>
+    <router-outlet></router-outlet>
+</ng-template> -->
+
+<bwm-header></bwm-header>
+<router-outlet></router-outlet>
+
+
 
