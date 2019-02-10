@@ -96,7 +96,7 @@ public getRentalById(rentalId : string) : Observable<Rental>{
 }
 //public and private  are access modifiers
 
-//creating a pblic rental method to call from compoennts and  return the rentals data to the compoent
+//creating a public  rental method to call from compoennts and  return the rentals data to the compoent
 //return type is an observable
 public getRentals() : Observable<Rental[]>{
   
