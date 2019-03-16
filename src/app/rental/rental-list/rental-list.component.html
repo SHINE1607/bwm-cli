@@ -6,7 +6,7 @@
   
     <div class="row">
         <!-- we are passing eeach rental item to rental-list-item comonent which is the child -->
-    <div class="col-md-3" *ngFor = "let rental of rentals">
+    <div class="col-lg-4" *ngFor = "let rental of rentals">
         <!-- passing the rentals array into the rental-list-item component html -->
       <bwm-rental-list-item [currentRental] = "rental"></bwm-rental-list-item>
     </div>

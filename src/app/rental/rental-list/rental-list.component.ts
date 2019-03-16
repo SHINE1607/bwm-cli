@@ -8,7 +8,6 @@ import { Rental }  from  '../shared/rental.model' ;
   styleUrls: ['./rental-list.component.css']
 })
 export class RentalListComponent implements OnInit {
-  //this is the syntax of creatinn array in the type script, here any means any dat type acan be included in the array
   //creatin a prpoerty of the class and storing the data
   rentals:Rental[] = [];
  
@@ -23,15 +22,14 @@ export class RentalListComponent implements OnInit {
     const rentalObservable = this.rentalService.getRentals();
 
     rentalObservable.subscribe(
+      
       (rentals : Rental[]) =>{
-        //storing the rentals recieced fropm the sobserver to this.rentals
+        //storing the rentals recieced from the observer to this.rentals
         this.rentals = rentals;
         //now because we are having the rental model array, we can have information of the each elemet and its properties
       },
       (err) =>{
-        console.log(err);
-
-
+        console.log(err+ 'this is the error obtained!!');
       },
       () =>{
 

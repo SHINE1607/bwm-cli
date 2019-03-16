@@ -13,6 +13,9 @@ import { RentalComponent } from './rental/rental.component';
 import { LandingComponent } from './landing/landing.component' 
 //importing the rental module from the rental component
 import { RentalModule } from './rental/rental.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 //creating the routes
 //When the browser's URL changes, that router looks for a corresponding Route from which it can determine the component to display.
@@ -29,7 +32,7 @@ const routes: Routes = [
     AppComponent,
     //here we are refencing the header component to use it in the app component 
     HeaderComponent, 
-    LandingComponent
+    LandingComponent, 
 
   ],
   imports: [
@@ -37,7 +40,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
-    RentalModule
+    RentalModule,
+    BrowserAnimationsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

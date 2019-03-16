@@ -1,7 +1,43 @@
-<div *ngIf = rental>
+<div>
+  <div style ="height :30em; overflow :hidden;"><img src  =  "{{rental.image}}" class = "image-container"></div>
+  <a href = "{{rental.website}}"  style = "text-decoration :none;"><h1 class = "rental-title">
+    {{rental.title}} 
+  </h1></a>
+  <div class = "city">
+    <i class="material-icons icon-rental-desc" style = "float :  left; margin-right: 0.2em;">location_on</i>
+    <!-- using the ngx pipes to make the firts letter capital -->
+    <!-- package use : ==>  npm install ngx-pipes --save -->
+    <p style =" float : left;" > {{rental.city  | ucwords }}, {{rental.street}} </p> 
+    <br>
+    <button mat-button color="warn" (click) = "mapPopup()" > Click to see the Location</button>    
+  </div>
+
+  <br>
+
+  <div class = "category">
+      <i class="material-icons icon-rental-desc" style  = "float: left; margin-right: 0.2em; ">weekend</i>
+      <p  style = "float: left">  {{rental.category}}</p>
+  </div>
+  <br>
+  <br>
+  <div class = "description">
+      <i class="material-icons icon-rental-desc" style = "float:left;margin-right: 0.2em;">import_contacts</i>
+      <!-- using tghe built in  pipes  function -->
+      <p style=  "float:left;">{{rental.description}}</p>
+  </div>
+
+
+  <br>
+  <br>
+
+  <div class = "rating">
+      <i class="material-icons icon-rental-desc" style = "float:left;margin-right: 0.2em;">favorite</i>
+      <p style=  "float:left;font-size : 125%">Rating  :<span style = "color   : rgb(204, 38, 38);">{{rental.rating}}</span></p>
+  </div>
   
-  <h1>
-      {{rental.title}}
-  </h1>
-    
+
 </div>
+
+
+
+<!-- <img src  =  "{{rental.image}}" class = "image-container"> -->

@@ -1,6 +1,6 @@
-//our data structure
+//our data model
 export class Rental{
-    id : string;
+    _id : string;
     title :string;
     city:string;
     location :string;
