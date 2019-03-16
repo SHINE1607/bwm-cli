@@ -33,7 +33,7 @@ const rentalSchema = new Schema(
         },
         bedrooms: Number,
         description :{
-            type: String,
+            type: String, 
             required : true
         },
         rating : Number,

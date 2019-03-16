@@ -4,42 +4,46 @@ const Rental =  require('./models/rental')
 module.exports =  class FakeDb{
     constructor(){
         this.rentals = [{
-            title: "Nice view on ocean",
-            city: "San Francisco",
-            street: "Main street",
-            category: "condo",
-            image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            title: "The Sahara Star",
+            city: "Mumbai",
+            street: "Mumbai Airport, 4.8 km away from Chhatrapati Shivaji International Airport",
+            category: "Culinary, Luxurious Bussiness Stay",
+            image: "https://s-ec.bstatic.com/images/hotel/max1280x900/152/152817920.jpg",
             bedrooms: 4,
             shared: true,
-            description: "Very nice apartment in center of the city.",
-            Rating : 4.3,
-            Rate : 43
+            description: "This is a MMT Assured hotel. These are hand picked hotels having awesome rooms with great service topped with our 24x7 hotline.",
+            rating : 4.3,
+            Rate : 43,
+            website : "https://www.saharastar.com/promotions/accommodation-offers.html"
             },
             {
-            title: "Modern apartment in center",
-            city: "New York",
-            street: "Time Square",
-            category: "apartment",
-            image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            title: "The Orchid",
+            city: "Mumbai",
+            street: "Mumbai Airport, 4.9 km away from Juhu Beach",            
+            category: "Luxury",
+            image: "https://content3.jdmagicbox.com/comp/mumbai/l5/022pxx22.xx22.000418239735.d5l5/catalog/the-orchid-hotel-vile-parle-east-mumbai-5-star-hotels-wh5c2.jpg",
             bedrooms: 1,
             shared: false,
             description: "Very nice apartment in center of the city.",
-            Rating : 4.8, 
-            Rate : 43            },
+            rating : 4.8, 
+            Rate : 43,
+            website : "https://www.orchidhotel.com/?utm_source=glopss&utm_medium=cpa&utm_campaign=affiliates"          
+        },
             {
-            title: "Old house in nature",
-            city: "Spisska Nova Ves",
-            street: "Banicka 1",
-            category: "house",
-            image: "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+            title: "Ramada Plaza Palm Grove",
+            city: "Mumbai",
+            street: "Juhu beach",
+            category: "Luxury",
+            image: "https://t-ec.bstatic.com/images/hotel/max1024x768/731/73171931.jpg",
             bedrooms: 5,
             shared: true,
-            description: "Very nice apartment in center of the city.",
-            Rating :4.1,
-            Rate : 43}]
+            description: "Stay in style at this popular beachfront property",
+            rating :4.1,
+            Rate : 43
+        ,   website : "https://www.ramadaplaza-juhu.com/"}]
     }
 
-    //fubction to removethe the collection on cennecting to databse
+    //fubction to removsethe the collection on cennecting to databse
     async cleanDb(){
         //ksut empty object wuill clean our databse
         //reantal is an instance of the Schema class,we can access the middle are functins

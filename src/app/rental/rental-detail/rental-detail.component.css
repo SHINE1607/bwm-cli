@@ -1,3 +1,56 @@
 *{
     margin : 0;
 }
+
+.rental-title{
+    margin-top : 0.3em;
+    font-weight : 700; 
+    
+    color : rgb(51, 51, 51);
+    transition-duration: 0.3s;
+    padding : 0.3em;
+    width : 10em;
+    border-radius : 0.1em
+
+}
+
+.rental-title:hover{
+    cursor: pointer;
+    
+
+}
+
+.image-container{
+    margin : 1em 0.5em 1em 0.5em ;
+    width : 100%;
+    overflow:hidden;
+}
+.city, .category, .description, .rating{
+    margin-left : 0.5em;
+}
+
+.icon-rental-desc{
+    font-size  :1.25em;
+    color : rgb(182, 5, 5);
+    border : 0.08em solid rgb(182, 5, 5);   
+    border-radius :  50%;
+    padding  : 0.1em;
+
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  button:active {
+    outline: none;
+    border: none;
+    }
+    
+    button:focus {outline:0;}
+
+/* .description */
