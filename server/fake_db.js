@@ -14,7 +14,9 @@ module.exports =  class FakeDb{
             description: "This is a MMT Assured hotel. These are hand picked hotels having awesome rooms with great service topped with our 24x7 hotline.",
             rating : 4.3,
             Rate : 43,
-            website : "https://www.saharastar.com/promotions/accommodation-offers.html"
+            website : "https://www.saharastar.com/promotions/accommodation-offers.html",
+            latitude : 19.095689,
+            longitude : 72.85396041
             },
             {
             title: "The Orchid",
@@ -27,7 +29,11 @@ module.exports =  class FakeDb{
             description: "Very nice apartment in center of the city.",
             rating : 4.8, 
             Rate : 43,
-            website : "https://www.orchidhotel.com/?utm_source=glopss&utm_medium=cpa&utm_campaign=affiliates"          
+            website : "https://www.orchidhotel.com/?utm_source=glopss&utm_medium=cpa&utm_campaign=affiliates"   ,
+            latitude : 19.1476221,
+            longitude : 72.82817051
+            
+                   
         },
             {
             title: "Ramada Plaza Palm Grove",
@@ -39,8 +45,11 @@ module.exports =  class FakeDb{
             shared: true,
             description: "Stay in style at this popular beachfront property",
             rating :4.1,
-            Rate : 43
-        ,   website : "https://www.ramadaplaza-juhu.com/"}]
+            Rate : 43,
+            website : "https://www.ramadaplaza-juhu.com/",
+            latitude : 19.1363896,
+            longitude : 72.8990514
+            }]
     }
 
     //fubction to removsethe the collection on cennecting to databse

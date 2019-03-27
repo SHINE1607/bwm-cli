@@ -1,4 +1,4 @@
-import  { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { componentFactoryName } from '@angular/compiler';
 
 import { RentalListComponent } from './rental-list/rental-list.component';
@@ -7,7 +7,7 @@ import { RentalComponent } from './rental.component';
 // importing the ngxpipe module
 import { NgPipesModule } from 'ngx-pipes';
 //importing the custom pipe
-import {UppercasePipe} from '../common/pipes/uppercase.pipe';
+import { UppercasePipe } from '../common/pipes/uppercase.pipe';
 //importing the http client module to request the data from the server
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,6 +28,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { LocationDetailComponent } from './location-detail/location-detail.component';
 
+import { AgmCoreModule }  from '@agm/core'; 
 
 
 
@@ -57,6 +58,9 @@ const routes: Routes = [
      
      
     ],
+    exports :[
+      LocationDetailComponent
+    ],
     //services are indide the providers
     
     imports: [
@@ -66,7 +70,10 @@ const routes: Routes = [
       NgPipesModule,
       BrowserAnimationsModule,
       NoopAnimationsModule,
-      MaterialModule
+      MaterialModule,
+      AgmCoreModule.forRoot({
+        apiKey:"AIzaSyB7wUVgd60mn4R1QjlVG1gqyPMNP-nQ6HQ"
+      }),
 
       
 

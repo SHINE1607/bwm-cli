@@ -1,26 +1,34 @@
 //import  injectable form the angular core to inject ot to the components
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Rental } from './rental.model';
 //import the http client module to get the data fro the server
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+//to share  data between the unrelated components
+
+
 
 //create the injectable  decorator for the rental service class
 //propoerty decorator for the class
 @Injectable()
 //create the services class
   export class RentalService{
+      $mapClicked = new EventEmitter();
+      rental : Rental;
+    
+    
       //injecting an instance of  httpclient in  the constructor 
       //injecting the http service into the constructor
       constructor(private http: HttpClient){
         
       }
       
+      
     public getRentalById(rentalId : string) : Observable<any>{
+      
       //this is the internal request given to thye server via the client service 
+      this.$mapClicked.emit(<Observable<any>> this.http.get('/api/v1/rentals/' + rentalId));
       return <Observable<any>> this.http.get('/api/v1/rentals/' + rentalId);
-
-          
       
     }
     //public and private  are access modifiers

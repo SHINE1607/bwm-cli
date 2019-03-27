@@ -1,42 +1,61 @@
-<div>
-  <div style ="height :30em; overflow :hidden;"><img src  =  "{{rental.image}}" class = "image-container"></div>
-  <a href = "{{rental.website}}"  style = "text-decoration :none;"><h1 class = "rental-title">
+<div *ngIf="rental">
+  <div style ="height :30em; overflow :hidden;" class = "rental-image"><img src  =  "{{rental.image}}" class = "image-container"></div>
+  <div class = "rental-title-container"><a href = "{{rental.website}}"  style = "text-decoration :none;"><h1 class = "rental-title">
     {{rental.title}} 
+
   </h1></a>
+  <p style=  "font-size : 80%;margin-left : 1.5em;">Rating  :<span style = "color   : rgb(204, 38, 38);">{{rental.rating}}</span></p>
+</div>
+  <div class = "rental-location-container">
   <div class = "city">
-    <i class="material-icons icon-rental-desc" style = "float :  left; margin-right: 0.2em;">location_on</i>
+    <i class="material-icons icon-rental-desc1 icon-rental-desc" style = "float :  left; margin-right: 0.2em;">location_on</i>
     <!-- using the ngx pipes to make the firts letter capital -->
     <!-- package use : ==>  npm install ngx-pipes --save -->
-    <p style =" float : left;" > {{rental.city  | ucwords }}, {{rental.street}} </p> 
+    <p style =" float : left;margin-top: 0.6em;" > {{rental.city  | ucwords }}, {{rental.street}} </p> 
     <br>
-    <button mat-button color="warn" (click) = "mapPopup()" > Click to see the Location</button>    
-  </div>
+        
+ 
 
-  <br>
-
+  
+  <bwm-location-detail [rental] = "rental"></bwm-location-detail>
+  <button mat-button color="warn" style = "float: left; margin:0"   (click) = onCreate()  >Click to see the Location</button>
+ </div>
+</div>
+<div class = "category-desc-container">
   <div class = "category">
-      <i class="material-icons icon-rental-desc" style  = "float: left; margin-right: 0.2em; ">weekend</i>
-      <p  style = "float: left">  {{rental.category}}</p>
+      <i class="material-icons icon-rental-desc2 icon-rental-desc" style  = "float: left; margin-right: 0.2em; ">weekend</i>
+      <p  style = "float: left;margin-top: 0.6em;">  {{rental.category}}</p>
   </div>
+ 
   <br>
   <br>
   <div class = "description">
-      <i class="material-icons icon-rental-desc" style = "float:left;margin-right: 0.2em;">import_contacts</i>
+      <i class="material-icons icon-rental-desc3 icon-rental-desc" style = "float:left;margin-right: 0.2em;">import_contacts</i>
       <!-- using tghe built in  pipes  function -->
-      <p style=  "float:left;">{{rental.description}}</p>
+      <p style=  "float:left;margin-top: 0.6em;">{{rental.description}}</p>
   </div>
 
-
-  <br>
-  <br>
+<br>
+<br>
 
   <div class = "rating">
-      <i class="material-icons icon-rental-desc" style = "float:left;margin-right: 0.2em;">favorite</i>
-      <p style=  "float:left;font-size : 125%">Rating  :<span style = "color   : rgb(204, 38, 38);">{{rental.rating}}</span></p>
+      <i class="material-icons icon-rental-desc4 icon-rental-desc" style = "float:left;margin-right: 0.2em;">favorite</i>
+      <p style=  "float:left;margin-top: 0.6em;">Rating  :<span style = "color   : rgb(204, 38, 38);">{{rental.rating}}</span></p>
   </div>
+
+</div>
   
 
 </div>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 
 
 
