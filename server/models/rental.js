@@ -37,7 +37,9 @@ const rentalSchema = new Schema(
             required : true
         },
         rating : Number,
-        Rate : Number   
+        Rate : Number,
+        latitude  : Number,
+        longitude :Number  
     }
 );
 

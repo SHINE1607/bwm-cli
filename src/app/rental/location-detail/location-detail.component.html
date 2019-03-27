@@ -1,3 +1,24 @@
-<p>
-  location-detail works!
-</p>
+
+<!-- <agm-map [latitude] = "{latitude" [longitude] = "{{rental.longitude}}" (click) = "onChoseLocation($event)">
+  <agm-marker [latitude] = "{{rental.latitude}}" [longitude] = "{{rental.longitude}}"></agm-marker>
+</agm-map>
+<h3>{{rental.city}}, {{rental.stree}}</h3> -->
+
+<div class = "mapLocation bg-dark" *ngIf = "rental">
+<agm-map 
+    [latitude] = "rental.laitude" 
+    [longitude] = "rental.longitude" 
+    [zoom]="zoom"
+    >
+      <agm-marker 
+          [latitude]="rental.latitude"
+          [longitude]="rental.longitude"
+          [label]="rental.name">
+          
+        <agm-info-window>
+          <strong style = "color: black">{{rental.title}}, {{rental.city | ucwords}}</strong>
+        </agm-info-window>
+        
+      </agm-marker>
+</agm-map>
+</div>

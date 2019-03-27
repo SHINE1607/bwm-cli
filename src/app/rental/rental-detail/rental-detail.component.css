@@ -1,17 +1,37 @@
 *{
     margin : 0;
+ 
+}
+
+.rental-title-container{
+    background-color: white;
+    border-radius :0.1em;
+    margin :0.5em 0 0.5em 0;
+    padding: 1em;
+    
 }
 
 .rental-title{
-    margin-top : 0.3em;
     font-weight : 700; 
     
     color : rgb(51, 51, 51);
     transition-duration: 0.3s;
-    padding : 0.3em;
+    margin:0.5em;
+    margin-bottom: 0.1em;
     width : 10em;
     border-radius : 0.1em
 
+}
+
+.rental-location-container{
+    background-color: white;
+    border-radius :0.1em;
+    margin :0.5em 0 0.5em 0;
+    padding-bottom : 2em;
+    padding: 1em;
+}
+.city *{
+    margin :0.2em;
 }
 
 .rental-title:hover{
@@ -19,24 +39,66 @@
     
 
 }
-
+.rental-image{
+    background-color: white;
+    border-radius :0.1em;
+    padding : 1em;
+}
 .image-container{
-    margin : 1em 0.5em 1em 0.5em ;
+    margin :0.5em 0 0.5em 0 ;
     width : 100%;
+    height: 100%;
     overflow:hidden;
+    padding: 1em;
 }
 .city, .category, .description, .rating{
     margin-left : 0.5em;
 }
 
 .icon-rental-desc{
-    font-size  :1.25em;
-    color : rgb(182, 5, 5);
-    border : 0.08em solid rgb(182, 5, 5);   
+    font-size  :1.5em;
+    color : white; 
     border-radius :  50%;
-    padding  : 0.1em;
+    padding  : 0.3em;
+
 
 }
+.icon-rental-desc1{
+    background-color :rgb(255, 80, 80);
+    box-shadow: 6px 8px 10px -6px rgba(202, 118, 118, 0.94);
+
+
+}
+
+.icon-rental-desc2{
+    
+    background-color :rgb(0, 132, 255);
+    box-shadow: 6px 8px 10px -6px rgb(0, 84, 163);
+
+}
+
+.icon-rental-desc3{
+    
+    background-color :rgb(144, 9, 255);
+    box-shadow: 6px 8px 10px -6px rgb(84, 0, 153);
+}
+.icon-rental-desc4{
+    background-color :rgb(255, 0, 85);
+    box-shadow: 6px 8px 10px -6px rgb(165, 2, 64);
+
+}
+
+
+.category-desc-container{
+    background-color: white;
+    border-radius: 0.1em;
+    padding:1em;
+    padding-bottom : 4em;
+    min-height: 100px;
+}
+
+
+
 
 .example-icon {
     padding: 0 14px;
