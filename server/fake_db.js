@@ -1,5 +1,6 @@
 //importing the reantlschem 
-const Rental =  require('./models/rental')
+const Rental =  require('./models/rental');
+const User = require('./models/user');
 //we create a afunctionality to push thedata toi the database
 module.exports =  class FakeDb{
     constructor(){
@@ -50,27 +51,45 @@ module.exports =  class FakeDb{
             latitude : 19.1363896,
             longitude : 72.8990514
             }]
+
+         this.users = [{
+             useranme : "Testuser_fake",
+             email: "testuser_fake@gmail.com",
+             password : "testpassword_fake"
+         }];   
     }
 
-    //fubction to removsethe the collection on cennecting to databse
     async cleanDb(){
+        //fubction to removsethe the collection on cennecting to databse
         //ksut empty object wuill clean our databse
         //reantal is an instance of the Schema class,we can access the middle are functins
-        await Rental.remove({});
+        await Rental.deleteMany({})
+        await User.deleteMany({})
+
     }
     //function to store the data into schema and push into the database
     pushDatatoDb(){
+        const user = new User(this.users[0]);
+        
         this.rentals.forEach(rental =>{
             //creating a new instance of the Rental class and passing pushing the data into it
             const newRental = new Rental(rental);
+            newRental.user = user;
+            //now we need to push the user to the newRentals 
+            user.rentals.push(newRental);
+
             //this wi;; save the data ato database
+        
             newRental.save();
-        })
+        });
+        console.log(user.username);
+        user.save();
+
     }
 
-    seeDb(){
+    async seeDb(){
             //cleaning the databse
-        this.cleanDb();
+        await this.cleanDb();
         //this function works asynchronously, so the dtaabase may be cleaned after the pushing the data
         this.pushDatatoDb();
     }

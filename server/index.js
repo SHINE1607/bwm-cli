@@ -7,16 +7,33 @@ const config = require('./config/dev');
 //assigning all functionalities of express and calling the express to app
 //importing the fakedb
 const FakeDb = require('./fake_db')
-const rentalRoutes = require('./routes/rentals')
+const rentalRoutes = require('./routes/rentals');
+const userRoutes = require('./routes/users');
+const bodyParser = require("body-parser")
+
+
+
 const app = express();
+
+const mongoNewpParser = {
+    autoIndex: false,
+    useNewUrlParser: true,
+  };
+
+
 //this will connect to the mongo databse
 //.connect has 2 callback functions .then and '', the first will be called if the connection is suuccessful and the latter if the unexpected happens
-mongoose.connect('mongodb://shine1607:45TraderMan@ds161764.mlab.com:61764/book_our_stay_ng').then(()=>{
-        //craeting  an instance of  the FakeDb class
-    const fakeDb = new FakeDb();
-    fakeDb.seeDb();
+mongoose.connect(config.DB_URI,mongoNewpParser).then(()=>{
+    //craeting  an instance of  the FakeDb class
+const fakeDb = new FakeDb();
+fakeDb.seeDb();
 });
 
+
+//inorder to work with POST requst in Express js, u need body parser
+//it tales the input of a form and stores as a javascript object
+//basically it tells that the bodyparser tyakes json input 
+app.use(bodyParser.json());
 //ROUTING to rentals 
 //these are middleware functions in express js framework
 //app.get() middleawre function make the htp request
@@ -25,8 +42,9 @@ mongoose.connect('mongodb://shine1607:45TraderMan@ds161764.mlab.com:61764/book_o
 //     res.json({'success' : true})
 // })
 //calling the rentalRoutes on getting the requst to the sp[ecified route
+
 app.use('/api/v1/rentals', rentalRoutes);
- 
+app.use('/api/v1/users', userRoutes);
 //storing the port number inside a varable 
 const PORT = process.env.PORT || 3001;
 //listening to a specific port 
