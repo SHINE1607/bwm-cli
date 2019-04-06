@@ -39,7 +39,11 @@ const rentalSchema = new Schema(
         rating : Number,
         Rate : Number,
         latitude  : Number,
-        longitude :Number  
+        longitude :Number ,
+        user:{
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        }   
     }
 );
 

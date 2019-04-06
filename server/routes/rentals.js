@@ -4,6 +4,13 @@ const router =  express.Router();
 const Rental = require('../models/rental');
 
 
+const userController = require("../controller/user");
+
+//route handler fro the  authentication 
+router.get('/test', userController.authMiddleWare, (req, res) =>{
+    res.json({"working": true});
+})
+
 router.get('', (req,res) =>{
     //the callbvack function will called when the response from the database 
     Rental.find({}, (err, foundRentals) =>{
