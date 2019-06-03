@@ -1,3 +1,26 @@
+*{
+    color:white;
+}
+
+.hotel-title, .rating{
+    font-family: Raleway;
+    font-size: 150%;
+    font-weight:500;
+}
+
+.odd_template{
+    background: linear-gradient(to right, rgb(24, 212, 212) 0%, #5f19b4 100%);
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.even_template {
+    background: linear-gradient(to right, rgb(255, 157, 77) 0%, #ff85a0 100%);
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 a:hover{
     text-decoration:none;
     
@@ -14,8 +37,8 @@ a:hover{
 }
 
 .thumbnail:hover{
-    transform :scale(1.05,1.05);
-    box-shadow : 10px 10px 44px -12px rgba(0,0,0,0.4);
-    background-color :rgb(255, 166, 166);
+    transform :scale(1.02,1.02);
+    
+    
 }
 

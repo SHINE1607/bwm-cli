@@ -2,18 +2,35 @@
 <!-- giving the link to the each rentals  -->
 <!-- MAKING A SINGLE PAGE APPLICATION BY USING THE ROUTER LINK -->
 
+
+
 <a class ="rental-main-option" routerLink = "/rentals/{{currentRental._id}}">
   
   <div class="thumbnail">
       
-        <img src="{{currentRental.image}}" alt="The Oberoi Mumbai" style = "border-radius : 0.18em; width :100%; height :13em; overflow: hidden; margin-bottom : 0.5em;" >
+        <img src="{{currentRental.image}}" alt="The Oberoi Mumbai" style = "border-radius : 0.18em; width :300px; height :13em; overflow: hidden; margin-bottom : 0.5em;" >
           <div class="caption">
-              <h3 class = "hotel-title" style = "font-weight : 700">{{currentRental.title}}</h3>
-              <h4>{{currentRental.city}},</h4> <h5 style= "font-size: 90%">{{currentRental.street}}</h5>
-              <h4>Rating : <span style = "color:  #830000">{{currentRental.rating}}</span></h4>
+              <div class = "hotel-title">{{currentRental.title}}</div>
+              <div *ngIf="index%2 == 1">
+                  <div style = "font-size: 120%;" [ngClass]="'odd_template'">{{currentRental.city | titlecase}},</div> <h5  [ngClass]="'odd_template'" style= "font-size: 90%">{{currentRental.street}}</h5>
+                  <div class = "rating"><span style = "font-size:80%">ating : </span><span style = "color:  rgb(24, 212, 212)">{{currentRental.rating}}</span></div>
+                  <div class = "rating">Rate : <span style = "color:  rgb(173, 255, 255)">{{currentRental.Rate}}</span></div>
+              </div> 
+
+              <div *ngIf="index%2 == 0">
+                  <div style = "font-size: 120%;" [ngClass]="'even_template'">{{currentRental.city | titlecase}},</div> <h5  [ngClass]="'even_template'" style= "font-size: 90%">{{currentRental.street}}</h5>
+                  <div class = "rating"><span style = "font-size:80%">Rating : </span><span style = "color:  rgb(255, 157, 77)">{{currentRental.rating}}</span></div>
+                  <div class = "rating">Rate : <span style = "color:  rgb(255, 210, 174)">{{currentRental.Rate}}</span></div>
+              </div>
+
             
           </div>
         
+  
   </div>
 </a>
 
+
+<ngx-spinner bdOpacity = 0.9 bdColor = "#333" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true">
+  <p style="color: white" > Loading... </p>
+  </ngx-spinner>

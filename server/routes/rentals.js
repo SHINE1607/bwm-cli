@@ -8,6 +8,7 @@ const userController = require("../controller/user");
 
 //route handler fro the  authentication 
 router.get('/test', userController.authMiddleWare, (req, res) =>{
+    
     res.json({"working": true});
 })
 

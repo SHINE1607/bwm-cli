@@ -1,0 +1,94 @@
+
+<div class = "register-title">Register</div>
+
+
+ 
+<form >
+  <!-- username -->
+  <div class = "username-form">
+    <mat-form-field class="example-full-width" style = "margin: .3em;" [formGroup] = "formData" >
+      <input  matInput 
+              placeholder="Enter Your Useranme"  
+              formControlName="username"
+              name = "username"
+              required>
+              
+    </mat-form-field>
+  </div>
+  
+  
+  
+  <!-- email -->
+  <div class = "email-form">
+      <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input  matInput placeholder="Email" 
+                    [formControl]="emailFormControl"
+                    [errorStateMatcher]="matcher"
+                    required>
+            <mat-hint></mat-hint>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </form>
+  </div>
+  
+  
+  <!-- password -->
+  <div class =  "password-form">
+    <div class="example-container">
+      <mat-form-field  [formGroup] = "formData" > 
+        <input  matInput 
+                placeholder="Enter your password" 
+                [type]="hide ? 'password' : 'text'" 
+                formControlName="password"
+                name = "password"
+                required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  
+  
+  <!-- password confirmation-->
+  <div class =  "password-conf-form">
+    <div class="example-container">
+      <mat-form-field [formGroup] = "formData" >
+        <input  matInput 
+                placeholder="Passord Confiramtion" 
+                [type]="hide ? 'password' : 'text'" 
+                formControlName="passwordConfirmation"
+                name = "passwordConfirmation"
+                required
+                >
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+    
+    </div>
+  </div>
+
+  <div class = "submit">
+    <button 
+            mat-flat-button color="warn" 
+            (click) = "validate()">
+    Submit</button>
+  </div>
+</form>
+
+ 
+<ngx-spinner bdOpacity = 0.9 bdColor = "rgb(43, 45, 61)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "false">
+  <p style="color: white" > Loading... </p>
+  <button mat-flat-button color="warn" 
+  (click) = "tryOnceMore()">Try once more</button>
+  
+  </ngx-spinner>
+
+
+ 
+
+
+

@@ -14,11 +14,8 @@ import { HttpClient } from '@angular/common/http';
 //create the services class
   export class RentalService{
       $mapClicked = new EventEmitter();
-      rental : Rental;
-    
-    
-      //injecting an instance of  httpclient in  the constructor 
-      //injecting the http service into the constructor
+      currentRental: Rental;
+
       constructor(private http: HttpClient){
         
       }
@@ -26,8 +23,8 @@ import { HttpClient } from '@angular/common/http';
       
     public getRentalById(rentalId : string) : Observable<any>{
       
-      //this is the internal request given to thye server via the client service 
-      this.$mapClicked.emit(<Observable<any>> this.http.get('/api/v1/rentals/' + rentalId));
+      //this is the internal request given to the server via the client service 
+      //these are  the nd points
       return <Observable<any>> this.http.get('/api/v1/rentals/' + rentalId);
       
     }
@@ -39,7 +36,6 @@ import { HttpClient } from '@angular/common/http';
     public getRentals() : Observable<Rental[]>{
       //making a request for the rental page 
       //returing the observable 
-      console.log(this.http.get('/api/v1/rentals'));
       return  <Observable<Rental[]>> this.http.get('/api/v1/rentals')
 }
   //other way is to write the getRentals method

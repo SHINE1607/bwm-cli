@@ -1,9 +1,19 @@
+.page-title{
+    font-family: Raleway;
+    font-size: 150%;
+    font-weight:500;
+
+}
+
 .list-container{
-    background-color:white;
+    background-color:rgb(40, 42, 53);
     padding: 1em;
     border-radius :0.2em;
 }
 
+.rental-content{
+    margin: 4em;
+}
 
 #rentalListing{
     margin-left :0vw;

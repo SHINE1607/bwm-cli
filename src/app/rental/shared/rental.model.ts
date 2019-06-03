@@ -3,14 +3,16 @@ export class Rental{
     _id : string;
     title :string;
     city:string;
-    location :string;
+    street :string;
     category :string;
     image :string;
     bedrooms : number;
     description :string;
-    dailyRate : number;
+    rating:number;
+    Rate : number;
+    website: string;
     shared : boolean;
-    createdAt :string;
-    rating :number;
+    latitude: number;
+    longitude : number;
 }
 

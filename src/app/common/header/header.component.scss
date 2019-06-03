@@ -10,7 +10,9 @@
 }
 
 
-
+.navbar-default {
+    background-color: rgb(40, 42, 53);
+}
 .navbar *{
     margin:1em;
 }
@@ -36,6 +38,10 @@
     color:white;
 }
 
+
+.user-icon{
+    display:inline;
+}
 
 /*header*/
 

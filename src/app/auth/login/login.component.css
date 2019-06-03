@@ -1,0 +1,66 @@
+*{
+    color:white;
+}
+
+.login-title{
+    font-size: 150%;
+    margin : 1em;
+    margin-left :3em;
+   
+}
+
+ .email-form, .password-form{
+    background-color: rgb(40, 42, 53);
+    padding-left : 1em;
+    margin : 0.5em;
+    margin-left :3em;
+    width : 480px;
+    height: 5em;
+    border-radius :0.2em;
+}
+
+.submit{
+    margin : 1em;
+    margin-left :3em;
+}
+
+button:focus {outline:0;}
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 490px;
+    transition-duration: 0.4s;
+  }
+  
+  .example-full-width {
+    width: 430px;
+
+  }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 25vw;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+}

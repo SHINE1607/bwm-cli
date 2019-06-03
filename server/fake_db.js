@@ -14,7 +14,7 @@ module.exports =  class FakeDb{
             shared: true,
             description: "This is a MMT Assured hotel. These are hand picked hotels having awesome rooms with great service topped with our 24x7 hotline.",
             rating : 4.3,
-            Rate : 43,
+            Rate : 12200,
             website : "https://www.saharastar.com/promotions/accommodation-offers.html",
             latitude : 19.095689,
             longitude : 72.85396041
@@ -29,7 +29,7 @@ module.exports =  class FakeDb{
             shared: false,
             description: "Very nice apartment in center of the city.",
             rating : 4.8, 
-            Rate : 43,
+            Rate : 14470,
             website : "https://www.orchidhotel.com/?utm_source=glopss&utm_medium=cpa&utm_campaign=affiliates"   ,
             latitude : 19.1476221,
             longitude : 72.82817051
@@ -46,17 +46,28 @@ module.exports =  class FakeDb{
             shared: true,
             description: "Stay in style at this popular beachfront property",
             rating :4.1,
-            Rate : 43,
+            Rate : 11470,
             website : "https://www.ramadaplaza-juhu.com/",
             latitude : 19.1363896,
             longitude : 72.8990514
-            }]
+        },
+        
+        
+            
+        ]
 
-         this.users = [{
+         this.users = [
+             {
              useranme : "Testuser_fake",
              email: "testuser_fake@gmail.com",
              password : "testpassword_fake"
-         }];   
+         },
+        {
+            username: "shine1607",
+            email: "shine160700@gmail.com",
+            password: "45TraderMan"
+        }
+    ] 
     }
 
     async cleanDb(){
@@ -75,7 +86,7 @@ module.exports =  class FakeDb{
             //creating a new instance of the Rental class and passing pushing the data into it
             const newRental = new Rental(rental);
             newRental.user = user;
-            //now we need to push the user to the newRentals 
+            //pushing and making  refernce of each rentals to the user 
             user.rentals.push(newRental);
 
             //this wi;; save the data ato database
@@ -84,7 +95,6 @@ module.exports =  class FakeDb{
         });
         console.log(user.username);
         user.save();
-
     }
 
     async seeDb(){

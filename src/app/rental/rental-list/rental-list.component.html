@@ -1,18 +1,21 @@
 
+
 <section id = "rentalListing">
     <div class="page-header">
-        <h1 class= "page-title"><span style = "color:#ff4d4d">Book</span>yourHotel</h1>
+        <div class= "page-title"><span style = "color:#ff4d4d">Book</span>yourHotel</div>
     </div>
     <div class = "list-container"> 
     <div class="row">
         <!-- we are passing eeach rental item to rental-list-item comonent which is the child -->
-    <div class="col-lg-4" *ngFor = "let rental of rentals">
+    <div class="col-lg-3" *ngFor = "let rental of rentals; let i = index" class = "rental-content">
         <!-- passing the rentals array into the rental-list-item component html -->
-        
-      <bwm-rental-list-item [currentRental] = "rental"></bwm-rental-list-item>
-      </div>
+        <bwm-rental-list-item [currentRental] = "rental" [index]="i"></bwm-rental-list-item>
+    </div>
    
 
     </div>
   </div>
   </section> 
+  
+
+

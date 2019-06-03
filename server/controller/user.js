@@ -23,18 +23,19 @@ exports.auth =  (req,res) =>{
     }
 
     if (!user) {
-      return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'User does not exist'}]});
+      return res.status(422).send({title: 'Invalid User!', detail: 'User does not exist'});
     }
     if (user.hasSamePassword(password)) {
         //defing the JWT token
         const token = jwt.sign({
           userId: user.id,
-          username: user.username
+          username: user.username,
+          email : user.email
         }, config.SECRET, { expiresIn: '1h'});
   
         return res.json(token);
     } else {
-      return res.status(422).send({errors: [{title: 'Wrong Data!', detail: 'Wrong email or password'}]});
+      return res.status(422).send({title: 'Wrong Data!', detail: 'Wrong email or password'});
     }
   });
 }
@@ -57,7 +58,7 @@ exports.register =  (req,res) =>{
             return res.status(422).send({error : MongooseHelpers.normalizeErrors(err.error)})
         }
         if(existingUser){
-            return res.status(422).send({title  : "Invalid emial",detail : "User with same email exist" })
+            return res.status(422).send({title  : "Invalid email",detail : "User with same email exist" })
         }
         
         //creating the new user and pushing into the database
@@ -78,7 +79,7 @@ exports.register =  (req,res) =>{
     
 }
 
-
+//custom middleware function
 exports.authMiddleWare = ( req, res, next ) =>{
     //current token stored in the browser temperory storage 
     const token = req.headers.authorization;

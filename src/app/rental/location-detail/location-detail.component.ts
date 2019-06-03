@@ -4,7 +4,7 @@ import { RentalService  } from '../shared/rental.service';
 import { Rental } from '../shared/rental.model';
 import { MouseEvent,AgmMap } from '@agm/core';
 
-var google: any;
+var google: any;  
 
 
 @Component({

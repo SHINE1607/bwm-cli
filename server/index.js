@@ -24,9 +24,10 @@ const mongoNewpParser = {
 //this will connect to the mongo databse
 //.connect has 2 callback functions .then and '', the first will be called if the connection is suuccessful and the latter if the unexpected happens
 mongoose.connect(config.DB_URI,mongoNewpParser).then(()=>{
-    //craeting  an instance of  the FakeDb class
-const fakeDb = new FakeDb();
-fakeDb.seeDb();
+    // creating  an instance of  the FakeDb class
+
+    const fakeDb = new FakeDb();
+    fakeDb.seeDb();
 });
 
 
@@ -42,7 +43,6 @@ app.use(bodyParser.json());
 //     res.json({'success' : true})
 // })
 //calling the rentalRoutes on getting the requst to the sp[ecified route
-
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
 //storing the port number inside a varable 

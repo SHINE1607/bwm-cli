@@ -9,11 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //here we are importing the component to the app module or the main module
 import { HeaderComponent} from './common/header/header.component';
-import { RentalComponent } from './rental/rental.component';
 import { LandingComponent } from './landing/landing.component' 
 //importing the rental module from the rental component
 import { RentalModule } from './rental/rental.module';
+import { AuthModule } from './auth/auth.module' 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material';
+
 
 
 
@@ -21,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //When the browser's URL changes, that router looks for a corresponding Route from which it can determine the component to display.
 //each routing is an object
 const routes: Routes = [
- { path : "", component : LandingComponent}
+ { path : "", component : LandingComponent},
   // { path : "", redirectTo : "/rentals",  pathMatch : "full" }
 
   
@@ -41,8 +44,11 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RentalModule,
+    AuthModule,
     BrowserAnimationsModule,
-   
+    HttpClientModule,
+    MatSnackBarModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
